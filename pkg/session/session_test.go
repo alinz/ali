@@ -30,6 +30,12 @@ func TestUserSession(t *testing.T) {
 			}),
 			expected: false,
 		},
+		{
+			username:      "user1",
+			password:      "pass1",
+			authenticator: nil,
+			expected:      false,
+		},
 	}
 
 	for _, testCase := range testCases {
