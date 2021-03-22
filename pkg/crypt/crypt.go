@@ -33,3 +33,16 @@ type IndeterminantAuthenticator struct {
 func (ia *IndeterminantAuthenticator) Authenticate(u, p string) bool {
 	return rand.Float32() < 0.5
 }
+
+// AuthenticatorFunc is a helper func type to help facilitate testing
+// and usage of Authenticator
+type AuthenticatorFunc func(u, p string) bool
+
+// Make sure AuthenticatorFunc is satisfying Authenticator interface
+// at compile time
+var _ Authenticator = (*AuthenticatorFunc)(nil)
+
+// Authenticate uses given func to process the Auth
+func (a AuthenticatorFunc) Authenticate(u, p string) bool {
+	return a(u, p)
+}
