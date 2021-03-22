@@ -1,4 +1,4 @@
-module github.com/trisolaria/connectulum
+module github.com/trisolaria/ali
 
 go 1.13
 

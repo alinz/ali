@@ -12,4 +12,4 @@ Next steps will be around session management -- connecting a user to the Trisoli
 infrastructure securely and maintaining this connection through multiple requests for
 resources.
 
-Please see the [issues](https://github.com/trisolaria/connectulum/issues?q=is%3Aissue+is%3Aopen+sort%3Acreated-asc) for up-to-date status.
+Please see the [issues](https://github.com/trisolaria/ali/issues?q=is%3Aissue+is%3Aopen+sort%3Acreated-asc) for up-to-date status.
