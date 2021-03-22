@@ -17,10 +17,16 @@ var _ crypt.Authenticator = (*UserSession)(nil)
 // Authenticate uses the given authenticator at initialization of UserSession
 // to Authenticate the user
 func (s *UserSession) Authenticate(username, password string) bool {
+	if s.authenticator == nil {
+		return false
+	}
+
 	return s.authenticator.Authenticate(username, password)
 }
 
 // NewUserSession creates a new UserSession based on given authenticator
+// NOTE: if a nil authenticator pass to this function, all future Authenticate calls
+// will be result of false value
 func NewUserSession(authenticator crypt.Authenticator) *UserSession {
 	return &UserSession{
 		authenticator: authenticator,
